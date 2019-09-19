@@ -3,6 +3,7 @@ This respository is for project assignment of Service Oriented Programming, KMIT
 
 ## Introduction  
 This service give you the fare for going from one station to another station of Bangkok's train system
+![](https://github.com/NaponTunglukmongkol/Train-Fare-Service/blob/master/TrainFareService.jpg)
 
 ## Description  
 This service will return the fare needed between 2 station either in the same line or different line. It will calculate the route that can be taken and return result of all the possible route. you have an option to make the service to return the least amount of time needed or the least amount of fare needed. you can view all the station in Bangkok's train system.
