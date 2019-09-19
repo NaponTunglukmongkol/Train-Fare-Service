@@ -1,4 +1,4 @@
-# Train-Fee-Service
+# Train-Fare-Service
 This respository is for project assignment of Service Oriented Programming, KMITL  
 
 ## Introduction  
