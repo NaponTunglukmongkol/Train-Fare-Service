@@ -15,8 +15,17 @@ public class Calculator {
 	public String checkLine(String station) throws IOException, ParseException {
 		String line = null;
 		JSONObject airlink = rd.readFileObject("Airlink");
+		JSONObject bts = rd.readFileObject("BTS");
+		JSONObject mrt1 = rd.readFileObject("MRT1");
+		JSONObject mrt2 = rd.readFileObject("MRT2");
 		if(airlink.get(station) != null) {
 			return line = "Airlink";
+		}else if(bts.get(station) != null) {
+			return line = "BTS";
+		}else if(mrt1.get(station) != null) {
+			return line = "MRT1";
+		}else if(mrt2.get(station) != null) {
+			return line = "MRT2";
 		}
 		return line;
 	}

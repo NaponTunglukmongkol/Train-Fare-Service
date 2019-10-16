@@ -46,7 +46,7 @@ public class Reader {
 	public JSONObject readFileObject(String location) throws IOException, ParseException{
 		try {
 			JSONParser jp = new JSONParser();
-			FileReader fr = new FileReader("resource/fare/" + location + ".json");
+			FileReader fr = new FileReader("resource/" + location + ".json");
 			Object obj = jp.parse(fr);
 			JSONObject jsa = (JSONObject) obj;
 			return jsa;
