@@ -68,12 +68,12 @@ This service will return the fare needed between 2 station either in the same li
 
 ## Task
 
-- [ ] Collect resource
-- [ ] BTS fare calculator
-- [ ] MRT fare calculator
-- [ ] Airlink fare calculator
-- [ ] View all stations
-- [ ] View selected train line
+- [X] Collect resource
+- [X] BTS fare calculator
+- [X] MRT fare calculator
+- [X] Airlink fare calculator
+- [X] View all stations
+- [X] View selected train line
 - [ ] Connect all possible route
 - [ ] Show lowest fare
 - [ ] Show lowest time
