@@ -48,10 +48,10 @@ public class Calculator {
 			jo.put("possibleRoutes", count);
 		}else if(startLine == "BTS" && stopLine == "MRT1") { //bts to mrt1
 			count = 4;
-			JSONObject bts = rd.readFileObject(startLine);
-			JSONObject mrt1 = rd.readFileObject(stopLine);
-			JSONObject airlink = rd.readFileObject("Airlink");
-			JSONObject btsStation = (JSONObject) bts.get(start);
+			JSONObject bts = rd.readFileObject(startLine);//get bts json
+			JSONObject mrt1 = rd.readFileObject(stopLine);//get mrt1 json
+			JSONObject airlink = rd.readFileObject("Airlink");//get airlink json
+			JSONObject btsStation = (JSONObject) bts.get(start);//get start staion json
 			JSONObject airlinkStation = (JSONObject) airlink.get("พญาไท");
 			//go through Asok
 			long btsfare1 = (Long) btsStation.get("อโศก");
