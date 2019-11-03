@@ -161,9 +161,8 @@ public class Calculator {
 			JSONObject airlinkStation = (JSONObject) airlink.get(start);//get start station json
 			JSONObject btsStation = (JSONObject) bts.get("พญาไท");
 			//go through Phayathai
-			long btsfare1 = (Long) btsStation.get("พญาไท");
-			JSONObject airlinkStation1 = (JSONObject) airlink.get("พญาไท");
-			long airlinkfare1 = (Long) airlinkStation1.get(stop);
+			long btsfare1 = (Long) btsStation.get(stop);
+			long airlinkfare1 = (Long) airlinkStation.get("พญาไท");
 			long fare1 = btsfare1 + airlinkfare1;
 			String route1 = "ไปลงที่สถานี พญาไท จากนั้นเปลี่ยนไป bts";
 			JSONObject jo1 = new JSONObject();
@@ -171,33 +170,36 @@ public class Calculator {
 			jo1.put("route", route1);
 			ja.add(jo1);
 			//go through Makkasan1
-			JSONObject airlinkStation2 = (JSONObject) airlink.get("สีลม");
-			JSONObject mrt1Station2 = (JSONObject) mrt1.get("มักกะสัน");
-			long airlinkfare2 = (Long) airlinkStation2.get("สีลม");
-			long btsfare2 = (Long) btsStation.get(stop);
-			long fare2 = btsfare2 + airlinkfare2;
+			JSONObject mrt1Station2 = (JSONObject) mrt1.get("เพชรบุรี");
+			long airlinkfare2 = (Long) airlinkStation.get("มักกะสัน");
+			JSONObject btsStation2 = (JSONObject) bts.get("ศาลาแดง");
+			long btsfare2 = (Long) btsStation2.get(stop);
+			long mrt1fare1 = (Long) mrt1Station2.get("สีลม");
+			long fare2 = btsfare2 + airlinkfare2 + mrt1fare1;
 			String route2 = "ไปลงที่สถานี มักกะสัน จากนั้นเปลี่ยนไป mrt นั่งต่อไปจนถึงสถานี สีลม จากนั้นเปลี่ยนไป bts";
 			JSONObject jo2 = new JSONObject();
 			jo2.put("fare", fare2);
 			jo2.put("route", route2);
 			ja.add(jo2);
 			//go through Makkasan2
-			JSONObject airlinkStation3 = (JSONObject) airlink.get("มักกะสัน");
-			JSONObject mrt1Station3 = (JSONObject) mrt1.get("สุขุมวิท");
-			long airlinkfare3 = (Long) airlinkStation3.get("มักกะสัน");
-			long mrtfare3 = (Long) mrt1Station3.get(stop);
-			long fare3 = mrtfare3 + airlinkfare3;
+			JSONObject mrt1Station3 = (JSONObject) mrt1.get("เพชรบุรี");
+			long airlinkfare3 = (Long) airlinkStation.get("มักกะสัน");
+			JSONObject btsStation3 = (JSONObject) bts.get("อโศก");
+			long btsfare3 = (Long) btsStation3.get(stop);
+			long mrt1fare2 = (Long) mrt1Station3.get("สุขุมวิท");
+			long fare3 = btsfare3 + airlinkfare3 + mrt1fare2;
 			String route3 = "ไปลงที่สถานี มักกะสัน จากนั้นเปลี่ยนไป mrt นั่งต่อไปจนถึงสถานี สุขุมวิท จากนั้นเปลี่ยนไป bts";
 			JSONObject jo3 = new JSONObject();
 			jo3.put("fare", fare3);
 			jo3.put("route", route3);
 			ja.add(jo3);
 			//go through Makkasan3
-			JSONObject airlinkStation4 = (JSONObject) airlink.get("มักกะสัน");
-			JSONObject mrt1Station4 = (JSONObject) mrt1.get("สวนจตุจักร");
-			long mrtfare4 = (Long) mrt1Station4.get(stop);
-			long btsfare4 = (Long) airlinkStation4.get(stop);
-			long fare4 = mrtfare4 + btsfare4;
+			JSONObject mrt1Station4 = (JSONObject) mrt1.get("เพชรบุรี");
+			long airlinkfare4 = (Long) airlinkStation.get("มักกะสัน");
+			JSONObject btsStation4 = (JSONObject) bts.get("หมอชิต");
+			long btsfare4 = (Long) btsStation4.get(stop);
+			long mrt1fare3 = (Long) mrt1Station4.get("สวนจตุจักร");
+			long fare4 = btsfare4 + airlinkfare4 + mrt1fare3;
 			String route4 = "ไปลงที่สถานี มักกะสัน จากนั้นเปลี่ยนไป mrt นั่งต่อไปจนถึงสถานี สวนจตุจักร จากนั้นเปลี่ยนไป bts";
 			JSONObject jo4 = new JSONObject();
 			jo4.put("fare", fare4);
