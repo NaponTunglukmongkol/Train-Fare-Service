@@ -46,6 +46,38 @@ public class Calculator {
 			ja.add(joo);
 			jo.put("routes", ja);
 			jo.put("possibleRoutes", count);
+		}else if(startLine == "MRT1" && stopLine == "MRT2") { //mrt1 to mrt2
+			JSONObject mrt1 = rd.readFileObject(startLine);
+			JSONObject mrt2 = rd.readFileObject(stopLine);
+			JSONObject mrt1Station = (JSONObject) mrt1.get(start);
+			JSONObject mrt2Station = (JSONObject) mrt2.get("เตาปูน");
+			long mrt1fare = (Long) mrt1Station.get("เตาปูน");
+			long mrt2fare = (Long) mrt2Station.get(stop);
+			long fare1 = mrt1fare + mrt2fare;
+			String route1 = "ไปลงที่สถานี เตาปูน จากนั้นเปลี่ยนไป สายสีม่วง";
+			count = 1;
+			JSONObject jo1 = new JSONObject();
+			jo1.put("fare", fare1);
+			jo1.put("route", route1);
+			ja.add(jo1);
+			jo.put("routes", ja);
+			jo.put("possibleRoutes", count);
+		}else if(startLine == "MRT2" && stopLine == "MRT1") { //mrt2 to mrt1
+			JSONObject mrt1 = rd.readFileObject(stopLine);
+			JSONObject mrt2 = rd.readFileObject(startLine);
+			JSONObject mrt1Station = (JSONObject) mrt1.get("เตาปูน");
+			JSONObject mrt2Station = (JSONObject) mrt2.get(start);
+			long mrt1fare = (Long) mrt1Station.get(stop);
+			long mrt2fare = (Long) mrt2Station.get("เตาปูน");
+			long fare1 = mrt1fare + mrt2fare;
+			String route1 = "ไปลงที่สถานี เตาปูน จากนั้นเปลี่ยนไป สายสีฟ้า";
+			count = 1;
+			JSONObject jo1 = new JSONObject();
+			jo1.put("fare", fare1);
+			jo1.put("route", route1);
+			ja.add(jo1);
+			jo.put("routes", ja);
+			jo.put("possibleRoutes", count);
 		}else if(startLine == "BTS" && stopLine == "MRT1") { //bts to mrt1
 			count = 4;
 			JSONObject bts = rd.readFileObject(startLine);//get bts json
