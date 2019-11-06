@@ -75,7 +75,6 @@ This service will return the fare needed between 2 station either in the same li
 - [X] View all stations
 - [X] View selected train line
 - [ ] Connect all possible route
-  route list
   - [x] bts to mrt1
   - [x] bts to airlink
   - [ ] bts to mrt2
