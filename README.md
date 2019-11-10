@@ -74,19 +74,19 @@ This service will return the fare needed between 2 station either in the same li
 - [X] Airlink fare calculator
 - [X] View all stations
 - [X] View selected train line
-- [ ] Connect all possible route
+- [x] Connect all possible route
   - [x] bts to mrt1
   - [x] bts to airlink
-  - [ ] bts to mrt2
+  - [x] bts to mrt2
   - [x] mrt1 to mrt2
   - [x] mrt1 to bts
-  - [ ] mrt1 to airlink
+  - [x] mrt1 to airlink
   - [x] mrt2 to mrt1
-  - [ ] mrt2 to bts
-  - [ ] mrt2 to airlink
+  - [x] mrt2 to bts
+  - [x] mrt2 to airlink
   - [x] airlink to bts
-  - [ ] airlink to mrt1
-  - [ ] airlink to mrt2
+  - [x] airlink to mrt1
+  - [x] airlink to mrt2
 - [ ] Show lowest fare
 - [ ] Show lowest time
 
