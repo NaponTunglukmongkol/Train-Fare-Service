@@ -73,5 +73,25 @@ public class SpringBoot {
 		result = cl.calculateFare(start, startLine, stop, stopLine);
 		return result;
 	}
+	
+	@RequestMapping("{start}/to/{stop}/lowestfare")
+	JSONObject showLowestFare(@PathVariable String start, @PathVariable String stop) throws IOException, ParseException {
+		JSONObject result = new JSONObject();
+		String startLine = cl.checkLine(start);
+		String stopLine = cl.checkLine(stop);
+		result = cl.calculateFare(start, startLine, stop, stopLine);
+		JSONObject theresult = cl.lowestFare(result);
+		return theresult;
+	}
+	
+	@RequestMapping("{start}/to/{stop}/lowesttime")
+	JSONObject showLowestTime(@PathVariable String start, @PathVariable String stop) throws IOException, ParseException {
+		JSONObject result = new JSONObject();
+		String startLine = cl.checkLine(start);
+		String stopLine = cl.checkLine(stop);
+		result = cl.calculateFare(start, startLine, stop, stopLine);
+		JSONObject theresult = cl.lowestTime(result);
+		return theresult;
+	}
 
 }

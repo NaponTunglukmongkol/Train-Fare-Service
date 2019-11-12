@@ -978,5 +978,39 @@ public class Calculator {
 
 		return jo;
 	}
+	
+	public JSONObject lowestFare(JSONObject routes) {
+		JSONArray keep = (JSONArray) routes.get("routes");
+		JSONObject check = new JSONObject();
+		long fare = 1000000;
+		int possibleRoute = (Integer) routes.get("possibleRoutes");
+		int i = 0;
+		while(i < possibleRoute) {
+			JSONObject check2 = (JSONObject) keep.get(i);
+			System.out.println(check2);
+			if(fare > (Long) check2.get("fare")) {
+				check = check2;
+			}
+			i+=1;
+		}
+		return check;
+	}
+	
+	public JSONObject lowestTime(JSONObject routes) {
+		JSONArray keep = (JSONArray) routes.get("routes");
+		JSONObject check = new JSONObject();
+		long time = 1000000;
+		int possibleRoute = (Integer) routes.get("possibleRoutes");
+		int i = 0;
+		while(i < possibleRoute) {
+			JSONObject check2 = (JSONObject) keep.get(i);
+			System.out.println(check2);
+			if(time > (Long) check2.get("fare")) {
+				check = check2;
+			}
+			i+=1;
+		}
+		return check;
+	}
 
 }
