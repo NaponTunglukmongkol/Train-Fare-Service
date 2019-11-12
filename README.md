@@ -87,8 +87,8 @@ This service will return the fare needed between 2 station either in the same li
   - [x] airlink to bts
   - [x] airlink to mrt1
   - [x] airlink to mrt2
-- [ ] Show lowest fare
-- [ ] Show lowest time
+- [x] Show lowest fare
+- [x] Show lowest time
 
 ## Extra
 - [ ] Create Cache
