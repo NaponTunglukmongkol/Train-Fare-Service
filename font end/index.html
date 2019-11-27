@@ -50,6 +50,11 @@
             let stop = document.getElementById("stop");
             for (let i of myJson) {
                 for (let j in i) {
+                    let opt = document.createElement("option");
+                    opt.disabled = true;
+                    opt.innerText = "---" + j + "---";
+                    start.append(opt.cloneNode(true));
+                    stop.append(opt.cloneNode(true));
                     for (let k of i[j]) {
                         console.log(k);
                         let opt = document.createElement("option");
@@ -58,11 +63,6 @@
                         start.append(opt.cloneNode(true));
                         stop.append(opt.cloneNode(true));
                     }
-                    let opt = document.createElement("option");
-                    opt.disabled = true;
-                    opt.innerText = "-------";
-                    start.append(opt.cloneNode(true));
-                    stop.append(opt.cloneNode(true));
                 }
             }
         }
