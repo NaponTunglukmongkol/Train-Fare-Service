@@ -790,6 +790,7 @@ public class Calculator {
 			System.out.println(check2);
 			if (fare > (Long) check2.get("fare")) {
 				check = check2;
+				fare = (Long) check2.get("fare");
 			}
 			i += 1;
 		}
@@ -805,8 +806,9 @@ public class Calculator {
 		while (i < possibleRoute) {
 			JSONObject check2 = (JSONObject) keep.get(i);
 			System.out.println(check2);
-			if (time > (Long) check2.get("fare")) {
+			if (time > (Long) check2.get("time")) {
 				check = check2;
+				time = (Long) check2.get("time");
 			}
 			i += 1;
 		}
