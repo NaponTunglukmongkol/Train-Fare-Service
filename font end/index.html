@@ -1,0 +1,72 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <form action="">
+        <select name="start" id="start"></select>
+        <select name="stop" id="stop"></select>
+        <br>
+        <input type="radio" name="option" value="" checked>ALL<br>
+        <input type="radio" name="option" value="lowestfare"> Lowest Fare<br>
+        <input type="radio" name="option" value="lowesttime"> Lowest Time<br><br>
+        <button type="button" onclick="getroute()">get</button>
+    </form>
+
+    <div id=content>
+
+    </div>
+
+
+    <script type="text/javascript">
+        async function getroute() {
+            let start = document.getElementById("start");
+            let stop = document.getElementById("stop");
+            let radios = document.getElementsByName('option');
+            let url = 'http://34.87.20.177:8080/' + start.value + "/to/" + stop.value + "/";
+            console.log(url);
+            for (let i of radios) {
+                if (i.checked) {
+                    url += i.value;
+                }
+
+            }
+            let response = await fetch(url);
+            let myJson = await response.json();
+            document.getElementById("content").innerText = JSON.stringify(myJson);
+        }
+
+
+        window.onload = async function() {
+            let response = await fetch('http://34.87.20.177:8080/viewstation');
+            let myJson = await response.json();
+            let start = document.getElementById("start");
+            let stop = document.getElementById("stop");
+            for (let i of myJson) {
+                for (let j in i) {
+                    for (let k of i[j]) {
+                        console.log(k);
+                        let opt = document.createElement("option");
+                        opt.value = k;
+                        opt.innerText = k;
+                        start.append(opt.cloneNode(true));
+                        stop.append(opt.cloneNode(true));
+                    }
+                    let opt = document.createElement("option");
+                    opt.disabled = true;
+                    opt.innerText = "-------";
+                    start.append(opt.cloneNode(true));
+                    stop.append(opt.cloneNode(true));
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
