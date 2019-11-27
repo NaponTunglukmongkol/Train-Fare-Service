@@ -36,21 +36,17 @@ public class SpringBoot {
 	JSONArray showStation() throws IOException, ParseException {
 		JSONObject airlinkJson = rd.readFileObject("Airlink");
 		JSONObject btsJson = rd.readFileObject("BTS");
-		JSONObject mrt1Json = rd.readFileObject("MRT1");
-		JSONObject mrt2Json = rd.readFileObject("MRT2");
+		JSONObject mrtJson = rd.readFileObject("MRT");
 		JSONArray result = new JSONArray();
 		JSONObject airlink = new JSONObject();
 		JSONObject bts = new JSONObject();
-		JSONObject mrt1 = new JSONObject();
-		JSONObject mrt2 = new JSONObject();
+		JSONObject mrt = new JSONObject();
 		airlink.put("Airlink", airlinkJson.keySet());
 		bts.put("BTS", btsJson.keySet());
-		mrt1.put("MRT1", mrt1Json.keySet());
-		mrt2.put("MRT2", mrt2Json.keySet());
+		mrt.put("MRT", mrtJson.keySet());
 		result.add(airlink);
 		result.add(bts);
-		result.add(mrt1);
-		result.add(mrt2);
+		result.add(mrt);
 		return result;
 	}
 	
